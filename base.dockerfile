@@ -29,8 +29,6 @@ ENV BUILD_SCRIPTS_DIR /opt/build_scripts
 # Add entrypoint and build scripts
 COPY scripts $BUILD_SCRIPTS_DIR
 RUN chmod -R 770 $BUILD_SCRIPTS_DIR
-RUN echo $(ls -lah ./scripts)
-RUN echo $(ls -lah $BUILD_SCRIPTS_DIR)
 
 # install base dependencies, build app, cleanup
 RUN cd $BUILD_SCRIPTS_DIR && \
@@ -45,8 +43,8 @@ ENV PORT 3000
 
 EXPOSE 3000
 
-WORKDIR $APP_BUNDLE_DIR/bundle
+WORKDIR $APP_SOURCE_DIR/bundle
 
 # start the app
-ENTRYPOINT ["./entrypoint.sh"]
-CMD ["node", "main.js"]
+# ENTRYPOINT ["./entrypoint.sh"]
+# CMD ["node", "main.js"]

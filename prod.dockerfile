@@ -1,4 +1,4 @@
-FROM krismeister/meteor-launchpad:base
+FROM krismeister/meteor-launchpad4:base
 MAINTAINER Kris Meister <kris.meister@gmail.com>
 
 # copy the app to the container
